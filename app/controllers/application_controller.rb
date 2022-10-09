@@ -25,11 +25,11 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: 'ログインしてください'
   end
 
-  def error404(_e)
+  def error404(_error)
     render 'error404', status: :not_found, formats: [:html]
   end
 
-  def error500(e)
+  def error500(_error)
     logger.error [e, *e.backtrace].join("\n")
     render 'error500', status: :internal_server_error, formats: [:html]
   end
