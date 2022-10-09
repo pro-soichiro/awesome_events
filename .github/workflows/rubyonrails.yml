@@ -39,6 +39,9 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
+      # run rubocop
+      - name: Run Rubocop
+        run: bundle exec rubocop
 
 # lint:
 #   runs-on: ubuntu-latest
